@@ -8,7 +8,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+  <style>.section{padding:56px 20px}
+.container{max-width:1080px;margin:0 auto}
+.section-title{font-size:2rem;margin-bottom:6px}
+.section-sub{color:#6b7280;margin-bottom:22px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px}
+.card.depo header{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.avatar{border-radius:50%;object-fit:cover}
+.quote{font-style:italic;margin:8px 0 10px}
+.bullets{margin:0;padding-left:18px}
+.block-title{margin-top:28px;margin-bottom:10px;font-size:1.2rem}
+.card.img img{width:100%;height:auto;border-radius:10px;display:block}
+.card.img figcaption{font-size:.9rem;color:#6b7280;margin-top:6px}
+.cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.btn-primary,.btn-secondary{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn-primary{background:#0f62fe;color:#fff}
+.btn-secondary{background:#eef2f7;color:#111827}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+
     :root{
       --bg:#0b0c10; --card:#111218; --muted:#b4b7c3; --text:#e9eaf0; --brand:#2d7df6; --accent:#13c296; --line:#1b1d26;
     }
