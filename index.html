@@ -1,382 +1,227 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moisés Dantas — Gestor de Tráfego</title>
-  <meta name="description" content="Gestor de Tráfego e Customer Success. Estratégias em Meta, Google e TikTok Ads para negócios locais e e-commerce." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>.section{padding:56px 20px}
-.container{max-width:1080px;margin:0 auto}
-.section-title{font-size:2rem;margin-bottom:6px}
-.section-sub{color:#6b7280;margin-bottom:22px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px}
-.card.depo header{display:flex;gap:12px;align-items:center;margin-bottom:10px}
-.avatar{border-radius:50%;object-fit:cover}
-.quote{font-style:italic;margin:8px 0 10px}
-.bullets{margin:0;padding-left:18px}
-.block-title{margin-top:28px;margin-bottom:10px;font-size:1.2rem}
-.card.img img{width:100%;height:auto;border-radius:10px;display:block}
-.card.img figcaption{font-size:.9rem;color:#6b7280;margin-top:6px}
-.cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-.btn-primary,.btn-secondary{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-.btn-primary{background:#0f62fe;color:#fff}
-.btn-secondary{background:#eef2f7;color:#111827}
-@media (max-width:900px){.grid-3{grid-template-columns:1fr}}
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moisés Dantas — Gestor de Tráfego Pago</title>
+  <meta name="description" content="Gestor de Tráfego Pago para negócios locais e e-commerce. Estratégia, criativos e otimização em Meta, Google e TikTok Ads.">
+  <style>
     :root{
-      --bg:#0b0c10; --card:#111218; --muted:#b4b7c3; --text:#e9eaf0; --brand:#2d7df6; --accent:#13c296; --line:#1b1d26;
+      --bg:#0b1320; --bg-2:#0f172a; --card:#ffffff; --muted:#64748b; --brand:#0ea5e9; --ink:#0f172a;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    a{color:inherit;text-decoration:none}
+    html,body{margin:0;padding:0;background:#0b1320;color:#e5e7eb;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial}
+    a{color:#93c5fd;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(11,12,16,.7);backdrop-filter:saturate(180%) blur(8px);z-index:50;border-bottom:1px solid var(--line)}
-    nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{font-weight:700;letter-spacing:.4px}
-    .nav a{margin-left:20px;font-size:14px;color:var(--muted)}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:#12131a;color:var(--text);font-weight:600}
-    .btn.primary{background:linear-gradient(90deg,var(--brand),#5c93ff);border:0;color:white}
-    .btn.ghost{background:transparent;border:1px solid var(--line)}
-    .hero{padding:96px 0 48px;border-bottom:1px solid var(--line)}
-    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:32px}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--muted)}
-    h1{font-size:44px;line-height:1.1;margin:14px 0 12px}
-    p.lead{color:var(--muted);font-size:18px;max-width:58ch}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
-    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-    .kpi{padding:16px;border:1px solid var(--line);border-radius:14px;background:#0f1016}
-    .kpi strong{font-size:22px}
-    .section{padding:56px 0;border-bottom:1px solid var(--line)}
-    h2{margin:0 0 6px;font-size:28px}
-    .sub{color:var(--muted);margin-bottom:22px}
-    .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .tag{display:inline-block;padding:6px 10px;border-radius:10px;border:1px solid var(--line);color:var(--muted);font-size:12px;margin:6px 6px 0 0}
-    .list{display:grid;gap:12px}
-    .list li{display:flex;gap:10px;align-items:flex-start}
-    .list li .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);margin-top:8px}
-    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .project{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#0f1016}
-    .project img{width:100%;height:160px;object-fit:cover;display:block}
-    .project .content{padding:14px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    footer{padding:32px 0;color:var(--muted)}
-    .social a{margin-right:14px}
-    @media (max-width:920px){
-      .grid{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr 1fr}
-      .cols{grid-template-columns:1fr}
+    header{position:sticky;top:0;background:#0f172a;border-bottom:1px solid rgba(255,255,255,.08);z-index:50;backdrop-filter:saturate(140%) blur(6px)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+    nav .links{display:flex;gap:16px;flex-wrap:wrap}
+    nav a{color:#e2e8f0;font-weight:600;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,.06)}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700}
+    .primary{background:var(--brand);color:#fff}
+    .hero{background:linear-gradient(180deg,#0b1320 0%,#0f172a 100%);color:#fff;padding:72px 0 56px}
+    .hero h1{font-size:40px;line-height:1.1;margin:0 0 10px}
+    .hero p{opacity:.9;margin:0 0 24px;max-width:760px}
+    section{padding:56px 0}
+    h2{font-size:32px;margin:0 0 14px}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
+    .muted{color:#94a3b8}
+    footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.08);color:#cbd5e1}
+    .wa-float{position:fixed;right:16px;bottom:16px;z-index:9999}
+    .wa-float a{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;text-decoration:none;background:#25d366;color:#fff;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.32)}
+    .wa-float img{width:20px;height:20px}
+    @media (max-width:600px){
+      .hero h1{font-size:30px}
     }
-    @media (max-width:560px){
-      .projects{grid-template-columns:1fr}
-      h1{font-size:36px}
-    }
+
+    /* ===== PROVAS (escopo isolado para não herdar opacidade do tema) ===== */
+    #provas{background:#ffffff;color:#0f172a}
+    #provas .muted{color:#475569}
+    #provas .card{background:#ffffff;border:1px solid #e5e7eb;color:#0f172a}
+    #provas a{color:#0ea5e9}
+    #provas img{display:block;width:100%;height:auto}
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <a class="brand" href="#">Moisés Dantas</a>
-        <div class="nav">
+        <strong style="color:#fff">Moisés Dantas</strong>
+        <div class="links">
           <a href="#sobre">Sobre</a>
           <a href="#servicos">Serviços</a>
-          <a href="#provas">Resultados</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#provas">Provas</a>
           <a href="#projetos">Projetos</a>
-          <a href="#contato" class="btn">Contato</a>
+          <a href="#contato">Contato</a>
         </div>
+        <a class="btn primary" href="#contato">Solicitar diagnóstico gratuito</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero container">
-    <div class="grid">
-      <div>
-        <span class="badge">Gestor de Tráfego | Meta, Google, TikTok</span>
-        <h1>Eu ajudo negócios locais e Delivery a crescer com anúncios que geram resultado de verdade.</h1>
-        <p class="lead">Planejo, crio e otimizo campanhas de mídia paga para aumentar alcance qualificado, cliques e pedidos. Estratégia clara, métricas simples e execução consistente.</p>
-        <div class="cta" style="margin-top:18px">
-          <a href="#contato" class="btn primary">Solicitar Orçamento de campanha</a>
-          <a href="#provas" class="btn red">Ver resultados</a>
-        </div>
-        <div style="margin-top:18px">
-          <span class="tag">Planejamento</span>
-          <span class="tag">Criação de criativos</span>
-          <span class="tag">Mensuração</span>
-          <span class="tag">Customer Success</span>
-        </div>
-         </div>
-      <div>
-        <div style="text-align:center;margin-bottom:16px">
-  <img src="./moises-dantas-gestor.jpg" 
-       alt="Moisés Dantas — Gestor de Tráfego Pago"
-       style="width:260px;height:260px;border-radius:50%;object-fit:cover;box-shadow:0 0 20px rgba(0,0,0,.35);" />
-</div>
-
-        <div class="card">
-          <h3 style="margin:0 0 8px">Destaques</h3>
-          <div class="kpis">
-            <div class="kpi"><strong>+300%</strong><div class="sub">Crescimento de alcance</div></div>
-            
-            <div class="kpi"><strong>PLANOS A PARTIR de</strong><div class="sub"> R$380/mês </div></div>
-            
-            <div class="kpi"><strong>30+</strong><div class="sub">Segmentações testadas</div></div>
-          </div>
-          <p class="sub" style="margin-top:12px">Métricas ilustrativas. Substitua por números reais quando tiver.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="sobre" class="section">
+  <section class="hero">
     <div class="container">
-      <h2>Sobre mim</h2>
-      <p class="sub"></p>
-      <div class="card">
-        <p>Sou Moisés Dantas, gestor de tráfego com foco em negócios locais e marcas que precisam transformar visibilidade em vendas. Minha abordagem combina estratégia, execução e acompanhamento próximo, para que cada real investido trabalhe a favor dos seus objetivos.</p>
-        <ul class="list" style="margin:10px 0 0 0; padding-left:0; list-style:none">
-          <li><span class="dot"></span><div>Planejamento orientado a dados e metas claras.</div></li>
-          <li><span class="dot"></span><div>Criação de criativos (reels, roteiros, imagens) alinhados às diretrizes de Meta, TikTok e Google.</div></li>
-          <li><span class="dot"></span><div>Otimização contínua e relatórios simples de entender.</div></li>
-        </ul>
-      </div>
+      <h1>Gestor de Tráfego | Meta, Google, TikTok</h1>
+      <p>Eu ajudo negócios locais e e-commerce a crescer com anúncios que geram resultado de verdade. Estratégia clara, métricas simples e execução consistente.</p>
+      <a class="btn primary" href="#contato">Solicitar diagnóstico gratuito</a>
     </div>
   </section>
 
-  <section id="servicos" class="section">
+  <section id="sobre">
+    <div class="container">
+      <h2>Sobre</h2>
+      <p class="muted">Sou Moisés Dantas, gestor de tráfego com foco em negócios locais e marcas que precisam transformar visibilidade em vendas. Minha abordagem combina estratégia, execução e acompanhamento próximo, para que cada real investido trabalhe a favor dos seus objetivos.</p>
+    </div>
+  </section>
+
+  <section id="servicos">
     <div class="container">
       <h2>Serviços</h2>
-      <p class="sub">Escolha o que faz sentido agora e evolua conforme os resultados.</p>
-      <div class="cols">
+      <div class="grid cols-3">
         <div class="card">
-          <h3>Gestão de Anúncios</h3>
-          <p>Estratégia, campanhas e otimização em Meta Ads, Google Ads e TikTok Ads.</p>
-          <ul class="list" style="list-style:none; padding-left:0">
-            <li><span class="dot"></span><div>Definição de público e funil.</div></li>
-            <li><span class="dot"></span><div>Testes A/B de criativos e ofertas.</div></li>
-            <li><span class="dot"></span><div>Relatórios quinzenais.</div></li>
-          </ul>
+          <h3>Planejamento</h3>
+          <p class="muted">Diagnóstico, definição de metas e plano de mídia.</p>
         </div>
         <div class="card">
-          <h3>Criativos e Conteúdo</h3>
-          <p>Roteiros, copys e peças para anúncios e redes sociais, prontos para rodar.</p>
-          <ul class="list" style="list-style:none; padding-left:0">
-            <li><span class="dot"></span><div>Reels e vídeos curtos.</div></li>
-            <li><span class="dot"></span><div>Artes estáticas de alta conversão.</div></li>
-            <li><span class="dot"></span><div>Calendário mensal básico.</div></li>
-          </ul>
+          <h3>Criação de criativos</h3>
+          <p class="muted">Peças para Meta, Google e TikTok alinhadas a cada etapa do funil.</p>
         </div>
         <div class="card">
-          <h3>Customer Success</h3>
-          <p>Acompanhamento pós-implementação para garantir adoção e resultado.</p>
-          <ul class="list" style="list-style:none; padding-left:0">
-            <li><span class="dot"></span><div>Onboarding e checklists.</div></li>
-            <li><span class="dot"></span><div>Reuniões de revisão.</div></li>
-            <li><span class="dot"></span><div>Planos de ação contínuos.</div></li>
-          </ul>
+          <h3>Mensuração</h3>
+          <p class="muted">Relatórios claros e otimização contínua focada em custo e conversão.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="provas" style="background:#fff;color:#0f172a;"> 
+  <section id="resultados">
     <div class="container">
       <h2>Resultados</h2>
-      <p class="sub">Títulos e bullets objetivos. Evite prometer clientes; foque em métricas.</p>
-      <div class="cols">
+      <div class="grid cols-3">
         <div class="card">
-          <h3>Comércio Local</h3>
-          <p>Campanha de alcance + mensagens.</p>
-          <ul class="list" style="list-style:none; padding-left:0">
-            <li><span class="dot"></span><div>+120% em visualizações do perfil.</div></li>
-            <li><span class="dot"></span><div>Redução de 35% no custo por mensagem.</div></li>
-          </ul>
+          <strong>+300% alcance</strong>
+          <p class="muted">Métricas ilustrativas. Substitua pelos seus números reais quando tiver.</p>
         </div>
         <div class="card">
-          <h3>Delivery</h3>
-          <p>Conversões no WhatsApp com criativos sazonais.</p>
-          <ul class="list" style="list-style:none; padding-left:0">
-            <li><span class="dot"></span><div>+2,3x alcance qualificado.</div></li>
-            <li><span class="dot"></span><div>Aumento de pedidos no pico do mês.</div></li>
-          </ul>
+          <strong>30+ segmentações testadas</strong>
+          <p class="muted">Testes iterativos para encontrar combinações vencedoras.</p>
         </div>
         <div class="card">
-          <h3>Clínica</h3>
-          <p>Campanhas de tráfego para agendamentos.</p>
-          <ul class="list" style="list-style:none; padding-left:0">
-            <li><span class="dot"></span><div>Queda de CPC e CPL após 3 iterações.</div></li>
-            <li><span class="dot"></span><div>Taxa de conversão do formulário +27%.</div></li>
-          </ul>
+          <strong>Otimização contínua</strong>
+          <p class="muted">Ajustes semanais e criativos sazonais.</p>
         </div>
       </div>
     </div>
   </section>
 
-<!-- =============================
-BLOCOS PRONTOS PARA COLAR NO SEU SITE
-Com novas imagens enviadas por Moisés Dantas (@ogestordantas)
-============================= -->
-
-<!-- 1) SEÇÃO PROVAS -->
-<section id="provas" class="container" style="padding:64px 0;">
-  <h2 style="font-size:2rem;margin-bottom:16px;">Provas</h2>
-  <p style="opacity:.8;margin-bottom:32px;">Resultados reais, estratégias aplicadas e cases de campanhas.</p>
-
-  <!-- Mini-cases com imagens novas -->
-  <div class="grid" style="display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:32px;">
-
-    <article class="card" style="border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff;">
-      <img src="assets/provas/trafego-pago-negocios-locais.jpg" alt="Tráfego Pago para Negócios Locais — campanhas em Meta, Google Ads e TikTok" style="width:100%;height:auto;display:block;">
-      <div style="padding:16px;">
-        <h3 style="margin:0 0 8px;">Tráfego Pago para Negócios Locais</h3>
-        <p style="margin:0 0 8px;opacity:.9;">Campanhas integradas em Meta, Google e TikTok Ads gerando alcance e novos clientes para empresas regionais.</p>
-        <small style="opacity:.75;">Meta, Google Ads e TikTok — Estratégia de prospecção local</small>
-      </div>
-    </article>
-
-    <article class="card" style="border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff;">
-      <img src="assets/provas/testes-ab-otimizacao.jpg" alt="Testes A/B e Otimização — Estratégias que transformam dados em resultados" style="width:100%;height:auto;display:block;">
-      <div style="padding:16px;">
-        <h3 style="margin:0 0 8px;">Testes A/B e Otimização</h3>
-        <p style="margin:0 0 8px;opacity:.9;">Acompanhamento e análise de métricas para reduzir custos e aumentar conversões reais.</p>
-        <small style="opacity:.75;">Estratégia de performance — Meta e Google Analytics</small>
-      </div>
-    </article>
-
-    <article class="card" style="border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff;">
-      <img src="assets/provas/campanha-promo-delivery.jpg" alt="Campanha Promo Delivery — aumento de pedidos e conversões no WhatsApp" style="width:100%;height:auto;display:block;">
-      <div style="padding:16px;">
-        <h3 style="margin:0 0 8px;">Campanha Promo Delivery</h3>
-        <p style="margin:0 0 8px;opacity:.9;">Campanha voltada para delivery local com anúncios otimizados para gerar pedidos no WhatsApp.</p>
-        <small style="opacity:.75;">+ Crescimento de pedidos — WhatsApp + Meta Ads</small>
-      </div>
-    </article>
-
-  </div>
-
-  <!-- Depoimentos -->
-  <div class="grid" style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-bottom:24px;">
-    <blockquote style="border-left:4px solid #0ea5e9;padding:12px 16px;border-radius:8px;background:#f8fafc;margin:0;">
-      “O Moisés organizou nossas campanhas e começamos a receber novos pedidos em poucos dias.”
-      <footer style="margin-top:8px;"><strong>— Ana, Restaurante Local</strong></footer>
-    </blockquote>
-    <blockquote style="border-left:4px solid #0ea5e9;padding:12px 16px;border-radius:8px;background:#f8fafc;margin:0;">
-      “Os relatórios ficaram muito mais claros. A performance melhorou visivelmente.”
-      <footer style="margin-top:8px;"><strong>— Fábia, Loja de Moda</strong></footer>
-    </blockquote>
-    <blockquote style="border-left:4px solid #0ea5e9;padding:12px 16px;border-radius:8px;background:#f8fafc;margin:0;">
-      “Com otimização e novos criativos, o custo por lead caiu bastante.”
-      <footer style="margin-top:8px;"><strong>— Dr. Lucas, Clínica de Saúde</strong></footer>
-    </blockquote>
-  </div>
-</section>
-
-<!-- 2) MENU: adicionar link Provas -->
-<!-- Dentro do seu <nav>: -->
-<!-- <a href="#provas">Provas</a> -->
-
-<!-- 3) CTA padronizado -->
-<a href="#contato" class="btn primary">Solicitar diagnóstico gratuito</a>
-
-<!-- 4) BOTÃO FLUTUANTE WHATSAPP -->
-<style>
-  .wa-float {position:fixed;right:16px;bottom:16px;z-index:9999;}
-  .wa-float a {display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;text-decoration:none;background:#25d366;color:#fff;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.12);} 
-  .wa-float img {width:20px;height:20px;}
-  @media (max-width: 480px){ .wa-float a{padding:10px 12px;font-size:.95rem;} }
-</style>
-<div class="wa-float" aria-label="Chamar no WhatsApp">
-  <a href="https://wa.me/5512996492?text=Oi%20Mois%C3%A9s%2C%20quero%20um%20diagn%C3%B3stico%20gratuito%20dos%20meus%20an%C3%BAncios." target="_blank" rel="noopener">
-    <img src="assets/icons/whatsapp.svg" alt="WhatsApp"> Chamar no WhatsApp
-  </a>
-</div>
-
-<!-- 5) SCHEMA.ORG -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Moisés Dantas — Gestor de Tráfego Pago",
-  "url": "https://ogestordantas.github.io/portifolio/",
-  "image": "https://ogestordantas.github.io/portifolio/assets/og-image.jpg",
-  "description": "Gestor de Tráfego especializado em Meta, Google e TikTok Ads. Estratégias, criativos e otimização orientada a resultados para negócios locais e e-commerce.",
-  "areaServed": {"@type": "Country", "name": "Brasil"},
-  "sameAs": [
-    "https://www.instagram.com/ogestordantas"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "telephone": "+55-12-99649-6492",
-    "email": "contato@ogestordantas.com"
-  }
-}
-</script>
-
-  <section id="projetos" class="section">
-<div class="container">
-<h2>Projetos</h2>
-<p class="sub">Adicione peças, criativos e estudos de caso.</p>
-<div class="projects">
-<article class="project">
-<img src="https://images.unsplash.com/photo-1557825835-70d97c4aa567?q=80&w=1200&auto=format&fit=crop" alt="Projeto 1"/>
-<div class="content">
-<strong>Campanha Promo Delivery</strong>
-<p class="sub">Anúncios para pedidos via WhatsApp.</p>
-</div>
-</article>
-<article class="project">
-<img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1200&auto=format&fit=crop" alt="Projeto 2"/>
-<div class="content">
-<strong>Ads Moda & Estilo</strong>
-<p class="sub">Sequência de criativos temáticos.</p>
-</div>
-</article>
-<article class="project">
-<img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=1200&auto=format&fit=crop" alt="Projeto 3"/>
-<div class="content">
-<strong>Captação Clínica</strong>
-<p class="sub">Testes A/B e otimização.</p>
-</div>
-</article>
-</div>
-</div>
-</section>
-
-  <section id="contato" class="section">
+  <!-- =================== PROVAS (NOVA) =================== -->
+  <section id="provas">
     <div class="container">
-      <h2>Fale comigo</h2>
-      <p class="sub">De negócios locais a marcas nacionais, eu ajudo empresas em todo o Brasil a crescer com anúncios estratégicos.
-Me chame e vamos conversar sobre o seu projeto..</p>
-      <div class="card">
-        <p style="margin:0 0 12px">Pronto para conversar sobre crescimento com anúncios?</p>
-        <div class="cta">
-          <a class="btn primary" href="https://wa.me/5512996826492" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-          <a class="btn" href="mailto:mundomsdantas@gmail.com">mundomsdantas@gmail.com</a>
-        </div>
-        <div class="social" style="margin-top:12px">
-          <a href="https://instagram.com/ogestordantas" target="_red" rel="noopener">Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=61580827703944" target="_blue" rel="noopener"">Facebook</a>
-          <a href="https://www.tiktok.com/@ogestordantas" target="_black" rel="noopener"">TikTok</a>
-        </div>
+      <h2>Provas</h2>
+      <p class="muted">Resultados reais, estratégias aplicadas e cases de campanhas.</p>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:16px">
+        <article class="card" style="padding:0;overflow:hidden">
+          <img src="assets/provas/trafego-pago-negocios-locais.jpg" alt="Tráfego Pago para Negócios Locais — campanhas em Meta, Google e TikTok">
+          <div style="padding:16px">
+            <h3 style="margin:0 0 8px">Tráfego Pago para Negócios Locais</h3>
+            <p class="muted" style="margin:0 0 8px">Campanhas integradas em Meta, Google e TikTok Ads gerando alcance e novos clientes para empresas regionais.</p>
+            <small class="muted">Meta, Google Ads e TikTok — Estratégia de prospecção local</small>
+          </div>
+        </article>
+
+        <article class="card" style="padding:0;overflow:hidden">
+          <img src="assets/provas/testes-ab-otimizacao.jpg" alt="Testes A/B e Otimização — Estratégias que transformam dados em resultados">
+          <div style="padding:16px">
+            <h3 style="margin:0 0 8px">Testes A/B e Otimização</h3>
+            <p class="muted" style="margin:0 0 8px">Acompanhamento e análise de métricas para reduzir custos e aumentar conversões reais.</p>
+            <small class="muted">Estratégia de performance — Meta e Google Analytics</small>
+          </div>
+        </article>
+
+        <article class="card" style="padding:0;overflow:hidden">
+          <img src="assets/provas/campanha-promo-delivery.jpg" alt="Campanha Promo Delivery — aumento de pedidos e conversões no WhatsApp">
+          <div style="padding:16px">
+            <h3 style="margin:0 0 8px">Campanha Promo Delivery</h3>
+            <p class="muted" style="margin:0 0 8px">Campanha voltada para delivery local com anúncios otimizados para gerar pedidos no WhatsApp.</p>
+            <small class="muted">Crescimento de pedidos — WhatsApp + Meta Ads</small>
+          </div>
+        </article>
       </div>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:24px">
+        <blockquote class="card" style="border-left:4px solid #0ea5e9;background:#ffffff">
+          “O Moisés organizou nossas campanhas e começamos a receber novos pedidos em poucos dias.”
+          <footer style="margin-top:8px;color:#0f172a"><strong>— Ana, Restaurante Local</strong></footer>
+        </blockquote>
+        <blockquote class="card" style="border-left:4px solid #0ea5e9;background:#ffffff">
+          “Os relatórios ficaram claros. A performance melhorou visivelmente.”
+          <footer style="margin-top:8px;color:#0f172a"><strong>— Fábia, Loja de Moda</strong></footer>
+        </blockquote>
+        <blockquote class="card" style="border-left:4px solid #0ea5e9;background:#ffffff">
+          “Com otimização e novos criativos, o custo por lead caiu bastante.”
+          <footer style="margin-top:8px;color:#0f172a"><strong>— Dr. Lucas, Clínica</strong></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+  <!-- ================ FIM PROVAS =================== -->
+
+  <section id="projetos">
+    <div class="container">
+      <h2>Projetos</h2>
+      <p class="muted">Seleção curta de iniciativas recentes. Substitua com os seus projetos reais.</p>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <h2>Contato</h2>
+      <p class="muted">Fale comigo para um diagnóstico gratuito. Retorno em até 24h úteis.</p>
+      <p><strong>E-mail:</strong> contato@ogestordantas.com</p>
+      <a class="btn primary" href="https://wa.me/5512996826492?text=Oi%20Mois%C3%A9s%2C%20quero%20um%20diagn%C3%B3stico%20gratuito%20dos%20meus%20an%C3%BAncios." target="_blank" rel="noopener">Chamar no WhatsApp</a>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap">
-        <div>© <span id="year"></span> Moisés Dantas. Todos os direitos reservados.</div>
-        <div class="social">
-        </div>
+      <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+        <div>© <span id="y"></span> Moisés Dantas — Gestor de Tráfego</div>
+        <div class="muted">@ogestordantas</div>
       </div>
     </div>
   </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+  <div class="wa-float" aria-label="Chamar no WhatsApp">
+    <a href="https://wa.me/5512996826492?text=Oi%20Mois%C3%A9s%2C%20quero%20um%20diagn%C3%B3stico%20gratuito%20dos%20meus%20an%C3%BAncios." target="_blank" rel="noopener">
+      <img src="assets/icons/whatsapp.svg" alt="WhatsApp"> Chamar no WhatsApp
+    </a>
+  </div>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Moisés Dantas — Gestor de Tráfego Pago",
+    "url": "https://ogestordantas.github.io/portifolio/",
+    "image": "https://ogestordantas.github.io/portifolio/assets/og-image.jpg",
+    "description": "Gestor de Tráfego especializado em Meta, Google e TikTok Ads. Estratégias, criativos e otimização orientada a resultados para negócios locais e e-commerce.",
+    "areaServed": {"@type": "Country", "name": "Brasil"},
+    "sameAs": ["https://www.instagram.com/ogestordantas"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "telephone": "+55-12-99682-6492",
+      "email": "contato@ogestordantas.com"
+    }
+  }
   </script>
 </body>
 </html>
